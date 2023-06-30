@@ -4,7 +4,7 @@ import tratuppip as tpip
 
 sdist = False if len(sys.argv) == 1 else sys.argv[1]
 
-print('Isto pode demorar...')
+print('this may take a while...')
 
 if not os.path.exists('uppip.txt'):
     cmd = 'pip list --outdated > uppip.txt'
@@ -13,10 +13,10 @@ if not os.path.exists('uppip.txt'):
 tpip.apresentável(sdist)
 
 
-ask = input('deseja continuar com a atualização? [S/N] ').strip().lower()
+ask = input('do you confirm the upgrade? [Y/N] ').strip().lower()
 
 
-if ask == 's':
+if ask == 'y':
     tpip.trata(sdist)
 
     cmd = 'pip install -r tratuppip.txt --upgrade'
@@ -24,10 +24,10 @@ if ask == 's':
 
     tpip.apaga()
 
-    print('Atualização Finalizada!')
+    print('Everything Good To Go!')
 
 elif ask == 'n':
-    print('MISSÃO ABORTADA!')
+    print('ABORTED ACTION!')
 
 else:
-    print('OPÇÃO NÃO ENCONTRADA!')
+    print('OPTION NOT FOUND!')
