@@ -1,3 +1,4 @@
+import shutil
 import os
 
 def apresentável(sdist: bool = False):
@@ -30,4 +31,4 @@ def trata(sdist: bool = False):
 def apaga():
     os.remove('uppip.txt')
     os.remove('tratuppip.txt')
-    
+    shutil.rmtree('__pycache__/', ignore_errors = True)
